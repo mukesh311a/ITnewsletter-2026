@@ -85,11 +85,21 @@ document.addEventListener('DOMContentLoaded', function() {
     new Chart(topperCtx, {
       type: 'bar',
       data: {
-        labels: ['Arpan Manna\n(1st Sem)', 'Aastik Sharma\n(1st Sem)', 'T. Snigdha Reddy\n(3rd Sem)', 'V. Aashritha\n(3rd Sem)', 'Siddam\n(5th Sem)', 'Chava Tanishq\n(5th Sem)', 'Yash Raj Deo\n(7th Sem)', 'Piyush Kumar\n(7th Sem)'],
+        labels: [
+          'ARYAN SHARMA\n(1st Sem)', 'SHANTAM SRIVASTAVA\n(1st Sem)', 'KRISHNA SONI\n(1st Sem)',
+          'Harsh Munjal\n(3rd Sem)', 'Akshat Bansal\n(3rd Sem)', 'Yash Thakur\n(3rd Sem)',
+          'TUSHAR GUPTA\n(5th Sem)', 'ANISH KUMAR\n(5th Sem)', 'KESHAV AGRAWAL\n(5th Sem)',
+          'SILAPARASETTI LOHITH\n(7th Sem)', 'KAJAL PANDEY\n(7th Sem)', 'TIWARI ABHISEK ANIL\n(7th Sem)'
+        ],
         datasets: [{
           label: 'Current SGPA/SPI',
-          data: [9.48, 9.10, 9.32, 9.20, 9.27, 9.10, 9.42, 9.09],
-          backgroundColor: ['#003366','#2874a6','#FF6B35','#d8461b','#D4A843','#f0d78c','#2e7d32','#4caf50'],
+          data: [9.4167, 9.3333, 9.1667, 9.8169, 9.7465, 9.6620, 9.5593, 9.3475, 9.2966, 9.5714, 9.4845, 9.0621],
+          backgroundColor: [
+            '#003366','#2874a6','#1a5276',
+            '#FF6B35','#d8461b','#c75000',
+            '#D4A843','#f0d78c','#b8860b',
+            '#2e7d32','#4caf50','#1b5e36'
+          ],
           borderRadius: 8, borderSkipped: false
         }]
       },
