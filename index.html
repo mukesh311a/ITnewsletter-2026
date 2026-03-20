@@ -12,6 +12,23 @@
 </head>
 
 <body>
+  <!-- Device Selection Overlay -->
+  <div id="device-overlay">
+    <div class="overlay-content">
+      <img src="logo.png" alt="IIIT Logo" style="width: 120px; margin-bottom: 20px;">
+      <h1 style="font-family: 'DM Serif Display', serif; font-size: 3.5rem; letter-spacing: 2px; margin: 0;">
+        <span style="color:#FF9A44;">विद्या</span><span style="color:#4cb3ff;">SETU</span>
+      </h1>
+      <p style="font-size: 1.15rem; margin-top: 15px; color: rgba(255,255,255,0.85); font-weight: 300;">Let's enter the newsletter through:</p>
+      <div class="device-btns">
+        <button class="device-btn" onclick="enterNewsletter('mobile')"><span>📱</span> Mobile</button>
+        <button class="device-btn" onclick="enterNewsletter('tablet')"><span>💊</span> Tablet</button>
+        <button class="device-btn" onclick="enterNewsletter('laptop')"><span>💻</span> Laptop</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="app-wrapper">
 
   <!-- ======================== HERO ======================== -->
   <section class="hero" id="home" style="position: relative;">
@@ -1652,10 +1669,34 @@
         | 23rd March 2026</p>
     </div>
   </footer>
+  </div>
 
   <!-- ======================== SCRIPTS ======================== -->
   <script src="charts.js"></script>
   <script>
+    function enterNewsletter(device) {
+      const overlay = document.getElementById('device-overlay');
+      const wrapper = document.getElementById('app-wrapper');
+      
+      if (device === 'mobile') {
+        wrapper.className = 'mobile-view';
+      } else if (device === 'tablet') {
+        wrapper.className = 'tablet-view';
+      } else {
+        wrapper.className = 'laptop-view';
+      }
+      
+      overlay.classList.add('hidden');
+      document.body.style.overflow = 'hidden'; // Ensure outer body doesn't scroll when playing with devices
+      
+      // If it's laptop, re-enable outer native scrolling
+      if (device === 'laptop') {
+        document.body.style.overflow = '';
+      }
+      
+      // Trigger resize for Chart.js to scale beautifully within the new container constraints
+      setTimeout(() => window.dispatchEvent(new Event('resize')), 650);
+    }
     // Reveal on scroll
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
